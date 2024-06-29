@@ -20,7 +20,7 @@ export default function Home() {
         <div className="gradient-03 z-0" />
         <Explore />
       </section>
-      <section className="relative">
+      {/* <section className="relative">
         <GetStarted />
         <div className="gradient-03 z-0" />
         <WhatsNew />
@@ -30,7 +30,7 @@ export default function Home() {
         <Insights />
         <div className="gradient-03 z-0" />
         <Feedback />
-      </section>
+      </section> */}
       <Footer />
     </main>
   );

@@ -16,25 +16,18 @@ const About = () => (
       viewport={{ once: false, amount: 0.25 }}
       className="innerWidth mx-auto flexCenter flex-col"
     >
-      <TypingText title="| About Metaversus" textStyles="text-center" />
+      <TypingText title="| About House of Numbers" textStyles="text-center" />
 
       <motion.p
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
-        <span className="font-extrabold text-white">Metaverse</span> is a new
-        thing in the future, where you can enjoy the virtual world by feeling
-        like it&lsquo;is really real, you can feel what you feel in this
-        metaverse world, because this is really the&nbsp;
-        <span className="font-extrabold text-white">
-          madness of the metaverse
-        </span>
-        &nbsp; of today, using only&nbsp;
-        <span className="font-extrabold text-white">VR</span> devices you can
-        easily explore the metaverse world you want, turn your dreams into
-        reality. Let&lsquo;s&nbsp;
-        <span className="font-extrabold text-white">explore</span> the madness
-        of the metaverse by scrolling down
+        The <span className="font-extrabold text-white">House of Numbers</span> is based on numerology and insights provided in this app are 
+        based on the Vedic science of numbers, planets, and their characteristics. It will provide you insights into 
+        your life, including aspects of your future life, career, relationships, and more. While we strive to offer 
+        accurate and insightful information, it is important to keep an&nbsp;<span className="font-extrabold text-white">open mind</span> and not to worry if certain aspects 
+        do not align with your personal characteristics. <br/>
+        Numerology is a tool for self-reflection and guidance, &nbsp;<span className="font-extrabold text-white">not a definitive predictor of your future or personality</span>.&nbsp;
       </motion.p>
       <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
         <Link href="#explore">

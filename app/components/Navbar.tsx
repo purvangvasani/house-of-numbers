@@ -14,23 +14,25 @@ const Navbar = () => (
     >
       <div className="absolute w-[50%] inset-0 gradient-01" />
       <div className="innerWidth mx-auto flex justify-between gap-8">
-        <Image
+        <span></span>
+        {/* <Image
           src="/search.svg"
           width={24}
           height={24}
           alt="search"
           className="object-contain"
-        />
+        /> */}
         <h2 className="font-extrabold text-[24px] leading-[30.24px] text-white">
-          METAVERSUS
+          House of Numbers
         </h2>
-        <Image
+        <span></span>
+        {/* <Image
           src="/menu.svg"
           width={24}
           height={24}
           alt="menu"
           className="object-contain"
-        />
+        /> */}
       </div>
     </motion.nav>
   </header>

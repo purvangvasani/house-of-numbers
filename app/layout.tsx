@@ -3,8 +3,8 @@ import "./styles/globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Metaversus",
-  description: "A Metaverse Landing Page",
+  title: "House of Numbers",
+  description: "",
 };
 
 export default function RootLayout({
