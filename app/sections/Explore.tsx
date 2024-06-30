@@ -163,11 +163,11 @@ const Explore = () => {
                   {table.dob} | {table.sunSign}
                 </p>
               </div>
-              <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
+              {/* <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
                 “With the development of today&lsquo;s technology, metaverse is very
                 useful for today&lsquo;s work, or can be called web 3.0. by using
                 metaverse you can use it as anything”
-              </p>
+              </p> */}
             </motion.div>
             <motion.div
               variants={fadeIn("left", "tween", 0.2, 1)}
