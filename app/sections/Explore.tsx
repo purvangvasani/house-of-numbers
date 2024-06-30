@@ -174,9 +174,9 @@ const Explore = () => {
               className="relative flex-1 flexCenter"
             >
               <Image
-                src={"/" + "Virgo" + ".png"}
-                width={700}
-                height={700}
+                src={"/" + table.sunSign + ".png"}
+                width={500}
+                height={500}
                 priority={true}
                 alt="planet-09"
                 style={{overflow: "visible"}}
