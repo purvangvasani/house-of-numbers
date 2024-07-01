@@ -1,0 +1,23 @@
+/* src/Grid.css */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; /* Adjust the gap between the boxes as needed */
+  }
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust the height as needed */
+    background-color: #ccc; /* Adjust the background color as needed */
+    font-size: 24px; /* Adjust the font size as needed */
+    /* Remove borders */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  
