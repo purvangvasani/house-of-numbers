@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { TitleText, TypingText } from "../components";
-import { fadeIn, staggerContainer, zoomIn } from "../utils/motion";
+import { StartSteps, TitleText, TypingText } from "../components";
+import { fadeIn, planetVariants, staggerContainer, zoomIn } from "../utils/motion";
 import { Input } from "@nextui-org/input";
 import { DatePicker, getKeyValue } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { report } from './report';
 import './Grid.css';
+import { startingFeatures } from "../constants";
 
 interface ReportData {
   name: String;
@@ -21,11 +22,12 @@ interface ReportData {
   luckyYears: any;
   nameNumber: number;
   lifeGrid: Array<any>;
+  traits: any
 }
 
 
 const Explore = () => {
-  
+
   const [name, setName] = useState("");
   const [date, setDate] = useState(0);
   const [month, setMonth] = useState(0);
@@ -33,7 +35,7 @@ const Explore = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [table, setTable] = useState<ReportData | null>(null);
-  
+
   const Grid = () => {
     return (
       <div className="grid-container">
@@ -46,7 +48,9 @@ const Explore = () => {
     );
   };
 
+
   const generateReport = () => {
+    setTable(null);
     if (!name || (!date && !year && !month)) {
       setError("Add Proper inputs to generate your report!");
       return;
@@ -54,9 +58,8 @@ const Explore = () => {
     setError("");
     setIsLoading(true);
     setTimeout(() => {
-      const data = report({ name, date, month, year });
+      let data = report({ name, date, month, year });
       setTable(data);
-      console.log(data)
       setIsLoading(false);
     }, 2000);
 
@@ -172,6 +175,44 @@ const Explore = () => {
                 style={{ overflow: "visible" }}
                 className="w-full lg:w-[610px] lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]"
               />
+            </motion.div>
+          </motion.div>
+        </section>
+
+        <section className="paddings relative z-10">
+          <motion.div
+            variants={staggerContainer(0.25, 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="innerWidth mx-auto flex lg:flex-row flex-col gap-8"
+          >
+            <motion.div
+              variants={planetVariants("left")}
+              className="flex-1 flexCenter"
+            >
+              <Image
+                src={"/" + table.traits.element + ".png"}
+                width={1000}
+                height={1000}
+                alt="get-started"
+                priority={true}
+                className="w-[90%] h-[90%] object-contain"
+              />
+            </motion.div>
+            <motion.div
+              variants={fadeIn("left", "tween", 0.2, 1)}
+              className="flex-[0.75] flex justify-center flex-col"
+            >
+              <TypingText title="| Common Personality Traits" />
+              <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
+                “{table.traits.meaning}”
+              </p>
+              <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
+                {table.traits.traits.map((x: any, index: number) => (
+                  <StartSteps key={x} number={index + 1} text={x} />
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </section>
