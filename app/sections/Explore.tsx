@@ -186,7 +186,18 @@ const Explore = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
             className="innerWidth mx-auto flex lg:flex-row flex-col gap-8"
+          >  
+          <motion.div
+            variants={staggerContainer(0.25, 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="innerWidth mx-auto flex flex-col"
+            style={{ marginBottom: '15px' }}
           >
+            <TypingText title="| Common Personality Traits" />
+          </motion.div>
+
             <motion.div
               variants={planetVariants("left")}
               className="flex-1 flexCenter"
@@ -204,7 +215,6 @@ const Explore = () => {
               variants={fadeIn("left", "tween", 0.2, 1)}
               className="flex-[0.75] flex justify-center flex-col"
             >
-              <TypingText title="| Common Personality Traits" />
               <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
                 “{table.traits.meaning}”
               </p>
